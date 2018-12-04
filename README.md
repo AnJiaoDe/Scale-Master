@@ -267,6 +267,10 @@ public class ScaleFrameLayout extends FrameLayout {
 }
 
 ```
+Canvas缩放还可用于广告中，缩放广告View
+
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-36a6d2a4144e87e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-983f930a2093434d.gif?imageMogr2/auto-orient/strip)
 ## 各位老铁有问题欢迎及时联系、指正、批评、撕逼
 
