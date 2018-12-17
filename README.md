@@ -10,15 +10,17 @@
 一直好奇酷狗的皮肤预览是怎么实现的。
 难道是另外写了一个一模一样的布局文件，只是宽高不一样？
 感觉贼吉尔神奇啊！
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-2c67fbd8e06ca2db.gif?imageMogr2/auto-orient/strip)
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-1e39edb984d383f0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-b976319bc767b6cc.gif?imageMogr2/auto-orient/strip)
 
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-1af451b558cf4e6d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-26256de0602c9001?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**记得看完，后面有惊喜**
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-7ee844b4fdbf3427?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-2e35fdbf06e5b0df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-a5977ea052e36672?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 想想还是觉得不可能是一个个控件写上去的，一定有某种极其神奇却简单的方法。
 方法就是
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-a1d55822befcf6b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-5526e6dc1b3e74ed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 Android Canvas的scale，画布缩放
 
 ```
@@ -95,14 +97,14 @@ Android Canvas的scale，画布缩放
 
 上图：模拟器截图有点模糊，真实手机是没毛病的
 
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-2bd4bb02eecce0af.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-38b8ec5b6c985d95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 以中心点 为缩放中心
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-3aadeb90f5c296b7.gif?imageMogr2/auto-orient/strip)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-b4666de8c4785917.gif?imageMogr2/auto-orient/strip)
 以左顶点为缩放中心
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-0a1289f869ceaee1.gif?imageMogr2/auto-orient/strip)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-ee810f933d39d2ba.gif?imageMogr2/auto-orient/strip)
 
 **完整代码：**
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-62838a73eddb6f88.gif?imageMogr2/auto-orient/strip)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-13d6d354d8291ad6.gif?imageMogr2/auto-orient/strip)
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -267,11 +269,21 @@ public class ScaleFrameLayout extends FrameLayout {
 }
 
 ```
+
+## 其实缩放还有更简单的操作
+不需要自定义view
+
+```
+        view.setPivotX(ScreenUtils.getScreenWidth(context) / 2);
+        view.setPivotY(0);
+        view.setScaleX(scale);
+        view.setScaleY(scale);
+```
+
 Canvas缩放还可用于广告中，缩放广告View
 
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-36a6d2a4144e87e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-983f930a2093434d.gif?imageMogr2/auto-orient/strip)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-6c979be9904602fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![在这里插入图片描述](http://upload-images.jianshu.io/upload_images/11866078-1b23fa9c0a40d23b.gif?imageMogr2/auto-orient/strip)
 ## 各位老铁有问题欢迎及时联系、指正、批评、撕逼
 
 [GitHub](https://github.com/AnJiaoDe)
